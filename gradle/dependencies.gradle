@@ -1,0 +1,546 @@
+﻿ext {
+    versions = [:]
+    libraries = [:]
+}
+
+/*
+ * Versions
+ */
+
+// Datanucleus Objectstore
+versions.jdo_api = "3.1"
+versions.datanucleus_core = "4.1.2"
+versions.datanucleus_api_jdo = "4.1.0_release"
+versions.datanucleus_jdo_query = "4.0.4"
+versions.datanucleus_rdbms = "4.1.2"
+
+versions.datanucleus_jodatime = "4.1.0_release"
+versions.datanucleus_maven_plugin = "4.0.1"
+
+versions.shiro = "1.2.3"
+
+versions.slf4j = "1.7.10"
+versions.log4j = "1.2.17"
+
+versions.joda_time = "2.3"
+versions.guava = "16.0.1"
+
+versions.hamcrest = "1.3"
+
+versions.objenesis = "1.4"
+versions.javassist = "3.19.0_GA"
+versions.reflections = "0.9.9"
+
+versions.commons_logging = "1.1.2"
+versions.commons_cli = "1.2"
+versions.commons_httpclient = "3.1"
+versions.commons_codec = "1.9"
+
+versions.jackson = "2.5.0"
+versions.gson = "2.3.1"
+
+// using 2.3.2 throws strange error about not finding org.hsqldb.jdbcDriver"
+versions.hsqldb = "2.3.1"
+versions.log4jdbc_remix = "0.2.7"
+versions.resteasy_jaxrs = "3.0.11.Final"
+
+versions.jetty = "9.2.11.v20150529"
+
+versions.wicket = "6.20.0"
+versions.wicketstuff = "6.20.0"
+
+versions.wicket_webjars = "0.4.7"
+versions.wicket_bootstrap = "0.9.13"
+versions.wicket_source = "6.0.0.8"
+
+versions.wicket_select2 = "6.20.0"
+versions.select2 = "3.5.2"
+versions.jquery_ui = "1.11.4"
+
+versions.guice = "3.0"
+versions.picocontainer = "2.14.3"
+
+versions.dom4j = "1.6.1"
+versions.jdom = "2.0.2"
+versions.xstream = "1.4.7"
+versions.htmlparser = "2.1"
+
+versions.junit = "4.12"
+versions.jmock = "2.6.0"
+versions.easymock = "2.5.2"
+versions.cucumber = "1.1.5"
+
+versions.geronimo_jsp_2.1_spec = "1.0.1"
+versions.geronimo_jta_1.1_spec = "1.1.1"
+versions.geronimo_jta_1.0.1B_spec = "1.1.1"
+versions.geronimo_servlet_3.0_spec = "1.0"
+versions.geronimo_annotation_1.0_spec = "1.1.1"
+versions.geronimo_activation_1.1_spec = "1.1"
+versions.geronimo_javamail_1.4_spec = "1.7.1"
+versions.geronimo_atinject_1.0_spec = "1.0"
+versions.geronimo_jcdi_1.0_spec = "1.0"
+versions.validation_api = "1.1.0.Final"
+
+/*
+ * Libraries
+ */
+
+//  unittestsupport
+libraries.isis_core_unittestsupport = "org.apache.isis.core:isis-core-unittestsupport:1.11.0-SNAPSHOT"
+//  not scope=test, because referenced by some sql-tests-common under compile scope
+
+//  applib
+libraries.isis_core_applib = "org.apache.isis.core:isis-core-applib:1.11.0-SNAPSHOT"    
+
+//  schema
+libraries.isis_core_schema = "org.apache.isis.core:isis-core-schema:1.11.0-SNAPSHOT"
+
+//  log4j
+libraries.isis_core_log4j = "org.apache.isis.core:isis-core-log4j:1.11.0-SNAPSHOT"
+
+//  metamodel
+libraries.isis_core_metamodel = "org.apache.isis.core:isis-core-metamodel:1.11.0-SNAPSHOT"    
+
+//  runtime
+libraries.isis_core_runtime = "org.apache.isis.core:isis-core-runtime:1.11.0-SNAPSHOT"
+
+libraries.isis_core_wrapper = "org.apache.isis.core:isis-core-wrapper:1.11.0-SNAPSHOT"
+
+//  webserver
+libraries.isis_core_webserver = "org.apache.isis.core:isis-core-webserver:1.11.0-SNAPSHOT"
+
+//  specsupport
+libraries.isis_core_specsupport = "org.apache.isis.core:isis-core-specsupport:1.11.0-SNAPSHOT"
+
+//  integtestsupport
+libraries.isis_core_integtestsupport = "org.apache.isis.core:isis-core-integtestsupport:1.11.0-SNAPSHOT"
+
+//  Restful Objects viewer
+libraries.isis-core-viewer-restfulobjects-applib = "org.apache.isis.core:isis-core-viewer-restfulobjects-applib:1.11.0-SNAPSHOT"
+libraries.isis-core-viewer-restfulobjects-rendering = "org.apache.isis.core:isis-core-viewer-restfulobjects-rendering:1.11.0-SNAPSHOT"
+libraries.isis-core-viewer-restfulobjects-server = "org.apache.isis.core:isis-core-viewer-restfulobjects-server:1.11.0-SNAPSHOT"
+
+//  security implementation(s)
+libraries.isis-core-security = "org.apache.isis.core:isis-core-security:1.11.0-SNAPSHOT"
+libraries.isis-core-security-shiro = "org.apache.isis.core:isis-core-security-shiro:1.11.0-SNAPSHOT"
+
+//  also for benefit of application developers, using scope=import
+libraries.isis-viewer-wicket-applib = "org.apache.isis.viewer:isis-viewer-wicket-applib:1.11.0-SNAPSHOT"
+
+libraries.isis-viewer-wicket-model = "org.apache.isis.viewer:isis-viewer-wicket-model:1.11.0-SNAPSHOT"
+libraries.isis-viewer-wicket-ui = "org.apache.isis.viewer:isis-viewer-wicket-ui:1.11.0-SNAPSHOT"
+libraries.isis-viewer-wicket-impl = "org.apache.isis.viewer:isis-viewer-wicket-impl:1.11.0-SNAPSHOT"
+
+//  Maven plugin
+libraries.isis-maven-plugin = "org.apache.isis.tool:isis-maven-plugin:1.11.0-SNAPSHOT"
+
+//  JodaTime
+libraries.joda-time = "joda-time:joda-time:${joda-time.version}"
+
+//  Google Guava (collections and commons)
+libraries.guava = "com.google.guava:guava:${guava.version}"
+
+
+//  Logging
+librries.slf4j_api = "org.slf4j:slf4j-api:${slf4j.version}"    
+libraries.slf4j-log4j12 = "org.slf4j:slf4j-log4j12:${slf4j.version}"
+libraries.jcl-over-slf4j = "org.slf4j:jcl-over-slf4j:${slf4j.version}"
+libraries.log4j = "log4j:log4j:${log4j.version}"
+
+
+// required because resteasy-jaxrs declares as a test dependency
+// whereas httpclient4 needs it as a compile dependency
+libraries.commons-logging = "commons-logging:commons-logging:${commons-logging.version}"
+
+//  Apache Commons
+libraries.commons-cli = "commons-cli:commons-cli:${commons-cli.version}"
+libraries.commons-httpclient = "commons-httpclient:commons-httpclient:${commons-httpclient.version}"
+libraries.commons-codec = "commons-codec:commons-codec:${commons-codec.version}"
+
+//  Dependency injection
+libraries.guice = "com.google.inject:guice:${guice.version}"
+libraries.picocontainer = "org.picocontainer:picocontainer:${picocontainer.version}"
+
+//   Reflection/metadata
+libraries.reflections = "org.reflections:reflections:${reflections.version}"
+
+
+//  Bytecode libraries
+libraries.objenesis = "org.objenesis:objenesis:${objenesis.version}"
+
+libraries.javassist = "org.javassist:javassist:${javassist.version}"
+
+
+
+//  XML libraries
+libraries.dom4j = "dom4j:dom4j:${dom4j.version}"
+
+libraries.jdom = "org.jdom:jdom:${jdom.version}"
+
+libraries.xstream = "com.thoughtworks.xstream:xstream:${xstream.version}"
+
+
+
+//  JSON libraries
+libraries.jackson-core = "com.fasterxml.jackson.core:jackson-core:${jackson.version}"
+
+libraries.jackson-databind = "com.fasterxml.jackson.core:jackson-databind:${jackson.version}"
+
+libraries.jackson-annotations = "com.fasterxml.jackson.core:jackson-annotations:${jackson.version}"
+
+libraries.gson = "com.google.code.gson:gson:${gson.version}"
+
+
+
+//  HTML
+libraries.htmlparser = "org.htmlparser:htmlparser:${htmlparser.version}"
+    <exclusions>
+        <exclusion>
+        libraries. = "com.sun</groupId>
+            <artifactId>tools</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+
+//  Databases
+  <groupId>org.hsqldb</groupId>
+  <artifactId>hsqldb</artifactId>
+  <version>${hsqldb.version}"
+
+
+  <groupId>org.lazyluke</groupId>
+  <artifactId>log4jdbc-remix</artifactId>
+  <version>${log4jdbc-remix.version}"
+
+
+
+//  Shiro
+libraries.shiro-core = "org.apache.shiro:shiro-core:${shiro.version}"
+
+libraries.shiro-web = "org.apache.shiro:shiro-web:${shiro.version}"
+
+
+
+//  RestEasy
+libraries.resteasy-jaxrs = "org.jboss.resteasy:resteasy-jaxrs:${resteasy-jaxrs.version}"
+    <exclusions>
+        //  instead use geronimo-servlet_3.0_spec
+        <exclusion>
+        libraries. = "org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+        </exclusion>
+        //  instead use org.apache.geronimo.specs:geronimo-annotation_1.0_spec
+        <exclusion>
+        libraries. = "javax.annotation</groupId>
+            <artifactId>jsr250-api</artifactId>
+        </exclusion>
+        //  org.apache.geronimo.specs:geronimo-activation_1.1_spec
+        <exclusion>
+        libraries. = "javax.activation</groupId>
+            <artifactId>activation</artifactId>
+        </exclusion>
+    </exclusions>
+
+libraries.resteasy-jaxb-provider = "org.jboss.resteasy:resteasy-jaxb-provider:${resteasy-jaxrs.version}"
+
+libraries.resteasy-jackson-provider = "org.jboss.resteasy:resteasy-jackson-provider:${resteasy-jaxrs.version}"
+
+
+//  Wicket
+libraries.wicket = "org.apache.wicket:wicket:${wicket.version}"
+    <type>pom</type>
+
+
+libraries.wicket-core = "org.apache.wicket:wicket-core:${wicket.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.wicket-request = "org.apache.wicket:wicket-request:${wicket.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.wicket-util = "org.apache.wicket:wicket-util:${wicket.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.wicket-extensions = "org.apache.wicket:wicket-extensions:${wicket.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.wicket-datetime = "org.apache.wicket:wicket-datetime:${wicket.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.wicket-auth-roles = "org.apache.wicket:wicket-auth-roles:${wicket.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.wicket-guice = "org.apache.wicket:wicket-guice:${wicket.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </exclusion>
+        <exclusion>
+            //  for Java7 compatibility (we don't use the proxying capability of this component)
+        libraries. = "cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+//  Wicket-Select2
+
+libraries.wicketstuff-select2 = "org.wicketstuff:wicketstuff-select2:${wicket-select2.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.select2 = "org.webjars:select2:${select2.version}"
+
+
+libraries.jquery-ui = "org.webjars:jquery-ui:${jquery-ui.version}"
+    <exclusions>
+        <exclusion>
+        libraries. = "org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+//  Webjars
+libraries.wicket-webjars = "de.agilecoders.wicket.webjars:wicket-webjars:${wicket-webjars.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-request</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.wicket-bootstrap-core = "de.agilecoders.wicket:wicket-bootstrap-core:${wicket-bootstrap.version}"
+    <exclusions>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-util</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-request</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.wicket-bootstrap-extensions = "de.agilecoders.wicket:wicket-bootstrap-extensions:${wicket-bootstrap.version}"
+    <exclusions>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-util</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-request</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+        </exclusion>
+        //  exclude unused extensions
+        <exclusion>
+        libraries. = "org.webjars</groupId>
+            <artifactId>jquerypp</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.webjars</groupId>
+            <artifactId>jquery-ui</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.webjars</groupId>
+            <artifactId>typeaheadjs</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.webjars</groupId>
+            <artifactId>x-editable-bootstrap</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "org.webjars</groupId>
+            <artifactId>spin-js</artifactId>
+        </exclusion>
+        <exclusion>
+        libraries. = "com.google.javascript</groupId>
+            <artifactId>closure-compiler</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+libraries.wicket-bootstrap-themes = "de.agilecoders.wicket:wicket-bootstrap-themes:${wicket-bootstrap.version}"
+    <exclusions>
+        <exclusion>
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+
+libraries.wicket-source = "net.ftlines.wicket-source:wicket-source:${wicket-source.version}"
+    <exclusions>
+        <exclusion>
+            //  for dependency convergence
+        libraries. = "org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+
+//  predicate libraries
+libraries.hamcrest-core = "org.hamcrest:hamcrest-core:${hamcrest.version}"
+
+libraries.hamcrest-library = "org.hamcrest:hamcrest-library:${hamcrest.version}"
+
+
+//  Web development
+libraries.jetty-all = "org.eclipse.jetty.aggregate:jetty-all:${jetty.version}"
+    <exclusions>
+        <exclusion>
+        libraries. = "org.eclipse.jetty.orbit</groupId>
+            <artifactId>javax.servlet</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+//  Testing libraries (not scope=test because used by isis-core-integtest)
+libraries.junit = "junit:junit:${junit.version}"
+
+
+libraries.jmock = "org.jmock:jmock:${jmock.version}"
+
+
+libraries.jmock-junit4 = "org.jmock:jmock-junit4:${jmock.version}"
+    <exclusions>
+        <exclusion>
+    //  for dependency convergence
+        libraries. = "junit</groupId>
+            <artifactId>junit-dep</artifactId>
+        </exclusion>
+    </exclusions>
+
+
+//  BDD testing
+libraries.cucumber-java = "info.cukes:cucumber-java:${cucumber.version}"
+
+libraries.cucumber-junit = "info.cukes:cucumber-junit:${cucumber.version}"
+
+
+//  Testing libraries (scope=test)
+libraries.easymock = "org.easymock:easymock:${easymock.version}"
+    <scope>test</scope>
+
+
+//  Specs
+libraries.geronimo-jsp_2.1_spec = "org.apache.geronimo.specs:geronimo-jsp_2.1_spec:${geronimo-jsp_2.1_spec.version}"
+
+  libraries.geronimo-jta_1.1_spec = "org.apache.geronimo.specs:geronimo-jta_1.1_spec:${geronimo-jta_1.1_spec.version}"
+  
+libraries.geronimo-jta_1.0.1B_spec = "org.apache.geronimo.specs:geronimo-jta_1.0.1B_spec:${geronimo-jta_1.0.1B_spec.version}"
+
+libraries.geronimo-servlet_3.0_spec = "org.apache.geronimo.specs:geronimo-servlet_3.0_spec:${geronimo-servlet_3.0_spec.version}"
+
+libraries.geronimo-annotation_1.0_spec = "org.apache.geronimo.specs:geronimo-annotation_1.0_spec:${geronimo-annotation_1.0_spec.version}"
+
+libraries.geronimo-activation_1.1_spec = "org.apache.geronimo.specs:geronimo-activation_1.1_spec:${geronimo-activation_1.1_spec.version}"
+
+libraries.geronimo-javamail_1.4_spec = "org.apache.geronimo.specs:geronimo-javamail_1.4_spec:${geronimo-javamail_1.4_spec.version}"
+
+libraries.geronimo-atinject_1.0_spec = "org.apache.geronimo.specs:geronimo-atinject_1.0_spec:${geronimo-atinject_1.0_spec.version}"
+
+libraries.geronimo-jcdi_1.0_spec = "org.apache.geronimo.specs:geronimo-jcdi_1.0_spec:${geronimo-jcdi_1.0_spec.version}"
+
+
+
+//  javax APIs
+libraries.validation-api = "javax.validation:validation-api:${validation-api.version}"
+
+
+
+//  DataNucleus
+libraries.jdo-api = "javax.jdo:jdo-api:${jdo-api.version}"
+
+libraries.datanucleus-core = "org.datanucleus:datanucleus-core:${datanucleus-core.version}"
+
+libraries.datanucleus-api-jdo = "org.datanucleus:datanucleus-api-jdo:${datanucleus-api-jdo.version}"
+
+libraries.datanucleus-jdo-query = "org.datanucleus:datanucleus-jdo-query:${datanucleus-jdo-query.version}"
+
+libraries.datanucleus-rdbms = "org.datanucleus:datanucleus-rdbms:${datanucleus-rdbms.version}"
+
+libraries.datanucleus-jodatime = "org.datanucleus:datanucleus-jodatime:${datanucleus-jodatime.version}"
