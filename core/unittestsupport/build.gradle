@@ -1,4 +1,3 @@
-apply from: "$rootDir/gradle/testArtifact.gradle"
 apply from: "$rootDir/gradle/providedConfiguration.gradle"
 
 dependencies {

@@ -15,7 +15,7 @@ dependencies {
     compile libraries.datanucleus_api_jdo    
     compile libraries.datanucleus_jdo_query    
     
-    testCompile project(path: ":core-unittestsupport", configuration: 'testOutput')
+    testCompile project(":core-unittestsupport")
 
     // as used by ClassDiscoveryServiceUsingReflections     
     compile libraries.reflections
