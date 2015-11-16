@@ -1,0 +1,11 @@
+apply from: "$rootDir/gradle/providedConfiguration.gradle"
+
+dependencies {
+    testCompile libraries.isis_core_unittestsupport
+
+    compile libraries.slf4j_log4j12
+    compile libraries.log4j
+
+    // to resolve log4j's optional dependency on javax.mail:mail:1.4
+    provided libraries.geronimo_javamail_1_4_spec
+}

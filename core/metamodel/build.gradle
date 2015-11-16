@@ -1,0 +1,20 @@
+apply from: "$rootDir/gradle/providedConfiguration.gradle"
+apply from: "$rootDir/gradle/testArtifact.gradle"
+
+dependencies {
+    testCompile libraries.isis_core_unittestsupport
+
+    compile libraries.isis_core_applib
+    testCompile libraries.isis_core_applib
+
+    compile libraries.commons_codec
+    compile libraries.commons_cli
+    compile libraries.guice
+    compile libraries.gson
+    provided libraries.geronimo_servlet_3_0_spec
+    compile libraries.datanucleus_core
+    compile libraries.datanucleus_api_jdo
+    compile libraries.datanucleus_jdo_query
+    compile libraries.datanucleus_rdbms
+    compile libraries.datanucleus_jodatime
+}

@@ -19,6 +19,11 @@ allprojects {
         mavenCentral()
         mavenLocal()
 
+        // Apache Isis snapshot repository
+        maven {
+            url "http://repository-estatio.forge.cloudbees.com/snapshot/"
+        }
+
         // JBoss Public Release
         maven {
             url "https://repository.jboss.org/nexus/content/groups/public-jboss/"

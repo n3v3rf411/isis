@@ -4,6 +4,8 @@ if ( !JavaVersion.current().java8Compatible ) {
 
 include "core-applib"
 include "core-unittestsupport"
+include "core-log4j"
+include "core-metamodel"
 
 rootProject.name = projectName
 

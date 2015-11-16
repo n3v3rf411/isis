@@ -7,6 +7,9 @@ ext {
  * Versions
  */
 
+// Isis version for dependencies whose artifacts are to be pulled instead of compiled
+versions.isis = "1.11.0-SNAPSHOT"
+
 // Datanucleus Objectstore
 versions.jdo_api = "3.1"
 versions.datanucleus_core = "4.1.2"
@@ -84,52 +87,51 @@ versions.validation_api = "1.1.0.Final"
 /**
  * Libraries
  */
-
 //  unittestsupport
-libraries.isis_core_unittestsupport = "org.apache.isis.core:isis-core-unittestsupport:1.11.0-SNAPSHOT"
+libraries.isis_core_unittestsupport = "org.apache.isis.core:isis-core-unittestsupport:${versions.isis}"
 //  not scope=test, because referenced by some sql-tests-common under compile scope
 
 //  applib
-libraries.isis_core_applib = "org.apache.isis.core:isis-core-applib:1.11.0-SNAPSHOT"    
+libraries.isis_core_applib = project(":core-applib")
 
 //  schema
-libraries.isis_core_schema = "org.apache.isis.core:isis-core-schema:1.11.0-SNAPSHOT"
+libraries.isis_core_schema = "org.apache.isis.core:isis-core-schema:${versions.isis}"
 
 //  log4j
-libraries.isis_core_log4j = "org.apache.isis.core:isis-core-log4j:1.11.0-SNAPSHOT"
+libraries.isis_core_log4j = "org.apache.isis.core:isis-core-log4j:${versions.isis}"
 
 //  metamodel
-libraries.isis_core_metamodel = "org.apache.isis.core:isis-core-metamodel:1.11.0-SNAPSHOT"    
+libraries.isis_core_metamodel = project(":core-metamodel")
 
 //  runtime
-libraries.isis_core_runtime = "org.apache.isis.core:isis-core-runtime:1.11.0-SNAPSHOT"
+libraries.isis_core_runtime = "org.apache.isis.core:isis-core-runtime:${versions.isis}"
 
-libraries.isis_core_wrapper = "org.apache.isis.core:isis-core-wrapper:1.11.0-SNAPSHOT"
+libraries.isis_core_wrapper = "org.apache.isis.core:isis-core-wrapper:${versions.isis}"
 
 //  webserver
-libraries.isis_core_webserver = "org.apache.isis.core:isis-core-webserver:1.11.0-SNAPSHOT"
+libraries.isis_core_webserver = "org.apache.isis.core:isis-core-webserver:${versions.isis}"
 
 //  specsupport
-libraries.isis_core_specsupport = "org.apache.isis.core:isis-core-specsupport:1.11.0-SNAPSHOT"
+libraries.isis_core_specsupport = "org.apache.isis.core:isis-core-specsupport:${versions.isis}"
 
 //  integtestsupport
-libraries.isis_core_integtestsupport = "org.apache.isis.core:isis-core-integtestsupport:1.11.0-SNAPSHOT"
+libraries.isis_core_integtestsupport = "org.apache.isis.core:isis-core-integtestsupport:${versions.isis}"
 
 //  Restful Objects viewer
-libraries.isis_core_viewer_restfulobjects_applib = "org.apache.isis.core:isis-core-viewer-restfulobjects-applib:1.11.0-SNAPSHOT"
-libraries.isis_core_viewer_restfulobjects_rendering = "org.apache.isis.core:isis-core-viewer-restfulobjects-rendering:1.11.0-SNAPSHOT"
-libraries.isis_core_viewer_restfulobjects_server = "org.apache.isis.core:isis-core-viewer-restfulobjects-server:1.11.0-SNAPSHOT"
+libraries.isis_core_viewer_restfulobjects_applib = "org.apache.isis.core:isis-core-viewer-restfulobjects-applib:${versions.isis}"
+libraries.isis_core_viewer_restfulobjects_rendering = "org.apache.isis.core:isis-core-viewer-restfulobjects-rendering:${versions.isis}"
+libraries.isis_core_viewer_restfulobjects_server = "org.apache.isis.core:isis-core-viewer-restfulobjects-server:${versions.isis}"
 
 //  security implementation(s)
-libraries.isis_core_security = "org.apache.isis.core:isis-core-security:1.11.0-SNAPSHOT"
-libraries.isis_core_security_shiro = "org.apache.isis.core:isis-core-security-shiro:1.11.0-SNAPSHOT"
+libraries.isis_core_security = "org.apache.isis.core:isis-core-security:${versions.isis}"
+libraries.isis_core_security_shiro = "org.apache.isis.core:isis-core-security-shiro:${versions.isis}"
 
 //  also for benefit of application developers, using scope=import
-libraries.isis_viewer_wicket_applib = "org.apache.isis.viewer:isis-viewer-wicket-applib:1.11.0-SNAPSHOT"
+libraries.isis_viewer_wicket_applib = "org.apache.isis.viewer:isis-viewer-wicket-applib:${versions.isis}"
 
-libraries.isis_viewer_wicket_model = "org.apache.isis.viewer:isis-viewer-wicket-model:1.11.0-SNAPSHOT"
-libraries.isis_viewer_wicket_ui = "org.apache.isis.viewer:isis-viewer-wicket-ui:1.11.0-SNAPSHOT"
-libraries.isis_viewer_wicket_impl = "org.apache.isis.viewer:isis-viewer-wicket-impl:1.11.0-SNAPSHOT"
+libraries.isis_viewer_wicket_model = "org.apache.isis.viewer:isis-viewer-wicket-model:${versions.isis}"
+libraries.isis_viewer_wicket_ui = "org.apache.isis.viewer:isis-viewer-wicket-ui:${versions.isis}"
+libraries.isis_viewer_wicket_impl = "org.apache.isis.viewer:isis-viewer-wicket-impl:${versions.isis}"
 
 //  Maven plugin
 //libraries.isis_maven_plugin = "org.apache.isis.tool:isis-maven-plugin:1.11.0-SNAPSHOT"

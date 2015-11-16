@@ -1,0 +1,10 @@
+dependencies {
+    compile libraries.isis_core_runtime
+
+    testCompile libraries.isis_core_metamodel
+    testCompile libraries.isis_core_runtime
+    testCompile libraries.isis_core_unittestsupport
+
+    compile libraries.objenesis
+    compile libraries.javassist
+}
