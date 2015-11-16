@@ -1,20 +1,20 @@
-﻿ext {
+ext {
     versions = [:]
     libraries = [:]
 }
 
-/*
+/**
  * Versions
  */
 
 // Datanucleus Objectstore
 versions.jdo_api = "3.1"
 versions.datanucleus_core = "4.1.2"
-versions.datanucleus_api_jdo = "4.1.0_release"
+versions.datanucleus_api_jdo = "4.1.0-release"
 versions.datanucleus_jdo_query = "4.0.4"
 versions.datanucleus_rdbms = "4.1.2"
 
-versions.datanucleus_jodatime = "4.1.0_release"
+versions.datanucleus_jodatime = "4.1.0-release"
 versions.datanucleus_maven_plugin = "4.0.1"
 
 versions.shiro = "1.2.3"
@@ -28,7 +28,7 @@ versions.guava = "16.0.1"
 versions.hamcrest = "1.3"
 
 versions.objenesis = "1.4"
-versions.javassist = "3.19.0_GA"
+versions.javassist = "3.19.0-GA"
 versions.reflections = "0.9.9"
 
 versions.commons_logging = "1.1.2"
@@ -81,7 +81,7 @@ versions.geronimo_atinject_1_0_spec = "1.0"
 versions.geronimo_jcdi_1_0_spec = "1.0"
 versions.validation_api = "1.1.0.Final"
 
-/*
+/**
  * Libraries
  */
 
@@ -141,7 +141,7 @@ libraries.joda_time = "joda-time:joda-time:${versions.joda_time}"
 libraries.guava = "com.google.guava:guava:${versions.guava}"
 
 //  Logging
-librries.slf4j_api = "org.slf4j:slf4j-api:${versions.slf4j}"    
+libraries.slf4j_api = "org.slf4j:slf4j-api:${versions.slf4j}"    
 libraries.slf4j_log4j12 = "org.slf4j:slf4j-log4j12:${versions.slf4j}"
 libraries.jcl_over_slf4j = "org.slf4j:jcl-over-slf4j:${versions.slf4j}"
 libraries.log4j = "log4j:log4j:${versions.log4j}"
@@ -182,19 +182,10 @@ libraries.htmlparser = dependencies.create("org.htmlparser:htmlparser:${versions
     exclude group: 'com.sun', module: 'tools'        
 }
 
-
-
 //  Databases
-  <groupId>org.hsqldb</groupId>
-  <artifactId>hsqldb'
-  <version>${hsqldb.version}"
+libraries.hsqldb = "org.hsqldb:hsqldb:${versions.hsqldb}"
 
-
-  <groupId>org.lazyluke</groupId>
-  <artifactId>log4jdbc-remix'
-  <version>${log4jdbc-remix.version}"
-
-
+libraries.log4jdbc_remix = "org.lazyluke:log4jdbc-remix:${versions.log4jdbc_remix}"
 
 //  Shiro
 libraries.shiro_core = "org.apache.shiro:shiro-core:${versions.shiro}"
@@ -330,8 +321,8 @@ libraries.cucumber_junit = "info.cukes:cucumber-junit:${versions.cucumber}"
 libraries.easymock = "org.easymock:easymock:${versions.easymock}"
 
 //  Specs
-libraries.geronimo_jsp_2.1_spec = "org.apache.geronimo.specs:geronimo-jsp_2.1_spec:${versions.geronimo_jsp_2_1_spec}"
-libraries.geronimo_jta_1.1_spec = "org.apache.geronimo.specs:geronimo-jta_1.1_spec:${versions.geronimo_jta_1_1_spec}"  
+libraries.geronimo_jsp_2_1_spec = "org.apache.geronimo.specs:geronimo-jsp_2.1_spec:${versions.geronimo_jsp_2_1_spec}"
+libraries.geronimo_jta_1_1_spec = "org.apache.geronimo.specs:geronimo-jta_1.1_spec:${versions.geronimo_jta_1_1_spec}"  
 libraries.geronimo_jta_1_0_1B_spec = "org.apache.geronimo.specs:geronimo-jta_1.0.1B_spec:${versions.geronimo_jta_1_0_1B_spec}"
 libraries.geronimo_servlet_3_0_spec = "org.apache.geronimo.specs:geronimo-servlet_3.0_spec:${versions.geronimo_servlet_3_0_spec}"
 libraries.geronimo_annotation_1_0_spec = "org.apache.geronimo.specs:geronimo-annotation_1.0_spec:${versions.geronimo_annotation_1_0_spec}"

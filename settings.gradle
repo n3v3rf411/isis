@@ -1,0 +1,16 @@
+if ( !JavaVersion.current().java8Compatible ) {
+    throw new GradleException( "Gradle must be run with Java 8" )
+}
+
+include "core-applib"
+include "core-unittestsupport"
+
+rootProject.name = projectName
+
+rootProject.children.each {project ->    
+    String projectDirName = project.name.replaceAll("-", "/")
+    project.projectDir = new File(settingsDir, projectDirName)
+    project.buildFileName = "build.gradle"
+    assert project.projectDir.isDirectory()
+    assert project.buildFile.isFile()
+}

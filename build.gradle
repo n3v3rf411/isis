@@ -1,0 +1,81 @@
+apply from: "gradle/dependencies.gradle"
+
+version = projectVersion
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        // Spring dependency management plugin
+        classpath "io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE"
+    }
+}
+
+allprojects {
+    group = projectGroup
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+
+        // JBoss Public Release
+        maven {
+            url "https://repository.jboss.org/nexus/content/groups/public-jboss/"
+        }
+
+        maven {
+            url "https://repository.jboss.org/nexus/content/groups/public-jboss/"
+        }
+
+        maven {
+            url "http://www.datanucleus.org/downloads/maven2-nightly/"
+        }
+
+        // required for RestEasy
+        maven {
+            url "http://repository.jboss.org/nexus/content/groups/public-jboss/"
+        }
+    }
+
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = '1.7'
+        targetCompatibility = '1.7'
+    }
+}
+
+ext {
+    expectedGradleVersion = '2.8'
+}
+
+configure(subprojects) { subproject ->
+    apply plugin: 'java'
+    apply plugin: "io.spring.dependency-management"
+
+    dependencyManagement {
+        //imports {
+            
+        //}
+        dependencies {
+            dependency('com.google.inject:guice:3.0') {
+                exclude 'org.sonatype.sisu.inject:cglib'
+            }            
+        }
+    }
+
+    dependencies {
+        // compile dependencies
+        compile libraries.guava
+        compile libraries.hamcrest_library
+        compile libraries.slf4j_api
+
+        // test dependencies
+        testCompile libraries.junit
+        testCompile libraries.jmock_junit4
+        testCompile libraries.objenesis
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = expectedGradleVersion
+}

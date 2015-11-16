@@ -1,0 +1,22 @@
+apply from: "$rootDir/gradle/testArtifact.gradle"
+
+dependencies {
+    compile libraries.joda_time
+
+    compile libraries.geronimo_atinject_1_0_spec        
+    compile libraries.validation_api
+
+    compile libraries.geronimo_jcdi_1_0_spec        
+
+    // DataNucleus' standard JDO support        
+    compile libraries.jdo_api        
+
+    // DataNucleus' (proprietary) type-safe query support    
+    compile libraries.datanucleus_api_jdo    
+    compile libraries.datanucleus_jdo_query    
+    
+    testCompile project(path: ":core-unittestsupport", configuration: 'testOutput')
+
+    // as used by ClassDiscoveryServiceUsingReflections     
+    compile libraries.reflections
+}

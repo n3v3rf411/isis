@@ -1,0 +1,19 @@
+apply from: "$rootDir/gradle/testArtifact.gradle"
+apply from: "$rootDir/gradle/providedConfiguration.gradle"
+
+dependencies {
+    compile libraries.junit
+    compile libraries.picocontainer
+    compile libraries.jmock
+    compile libraries.jmock_junit4
+    provided "javax.jdo:jdo-api:3.0.1"
+    compile libraries.javassist            
+    compile libraries.objenesis
+
+    compile dependencies.create(libraries.reflections) {           
+        // part of JDK 6+
+        // the version here does not provide getUserData(), setUserData(),
+        // as needed by xmlsnapshot functionality in isis-core-runtime.                        
+        exclude group: 'xml-apis', module: 'xml-apis'
+    }
+}
