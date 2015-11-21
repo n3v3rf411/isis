@@ -17,5 +17,6 @@ include::_ug_how-tos_business-rules.adoc[leveloffset=+1]
 include::_ug_how-tos_derived-members.adoc[leveloffset=+1]
 include::_ug_how-tos_drop-downs-and-defaults.adoc[leveloffset=+1]
 include::_ug_how-tos_persisted-title.adoc[leveloffset=+1]
-include::_ug_how-tos_replacing-default-service-implementations.adoc[leveloffset=+1]
+include::_ug_how-tos_bulk-actions.adoc[leveloffset=+1]
+
 

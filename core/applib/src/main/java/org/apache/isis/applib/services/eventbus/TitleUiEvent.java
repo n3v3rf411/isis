@@ -30,9 +30,11 @@ public abstract class TitleUiEvent<S> extends AbstractUiEvent<S> {
     private static final long serialVersionUID = 1L;
 
     //region > Default class
-
     /**
-     * Implementation provided as a convenience for domain objects that have no custom subclass.
+     * This class is the default for the
+     * {@link org.apache.isis.applib.annotation.DomainObjectLayout#titleUiEvent()} annotation attribute.  Whether this
+     * raises an event or not depends upon the "isis.reflector.facet.domainObjectLayoutAnnotation.titleUiEvent.postForDefault"
+     * configuration property.
      */
     public static class Default extends TitleUiEvent<Object> {
         private static final long serialVersionUID = 1L;
@@ -42,11 +44,21 @@ public abstract class TitleUiEvent<S> extends AbstractUiEvent<S> {
     //region > Noop class
 
     /**
-     * Marker class that is the default for
-     * {@link org.apache.isis.applib.annotation.DomainObjectLayout#titleUiEvent()} annotation attribute, meaning that
-     * an event should <i>not</i> be emitted by default.
+     * Convenience class to use indicating that an event should <i>not</i> be posted (irrespective of the configuration
+     * property seting for the {@link Default} event.
      */
     public static class Noop extends TitleUiEvent<Object> {
+        private static final long serialVersionUID = 1L;
+    }
+    //endregion
+
+    //region > Doop class
+
+    /**
+     * Convenience class meaning that an event <i>should</i> be posted (irrespective of the configuration
+     * property setting for the {@link Default} event..
+     */
+    public static class Doop extends TitleUiEvent<Object> {
         private static final long serialVersionUID = 1L;
     }
     //endregion
@@ -76,7 +88,7 @@ public abstract class TitleUiEvent<S> extends AbstractUiEvent<S> {
      * The title as provided by a subscriber using {@link #setTitle(String)}.
      *
      * <p>
-     *     Note that a {@link #getTranslatedTitle()} will be used in preference, if available.
+     *     Note that a {@link #getTranslatableTitle()} will be used in preference, if available.
      * </p>
      */
     public String getTitle() {
@@ -91,26 +103,26 @@ public abstract class TitleUiEvent<S> extends AbstractUiEvent<S> {
     }
     //endregion
 
-    //region > translatedTitle
-    private TranslatableString translatedTitle;
+    //region > translatableTitle
+    private TranslatableString translatableTitle;
 
     /**
-     * The translatable (i18n) title as provided by a subscriber using {@link #setTranslatedTitle(TranslatableString)}.
+     * The translatable (i18n) title as provided by a subscriber using {@link #setTranslatableTitle(TranslatableString)}.
      *
      * <p>
      *     If a translatable title has been provided then this will be used in preference to any
      *     {@link #getTitle() non-translatable title}.
      * </p>
      */
-    public TranslatableString getTranslatedTitle() {
-        return translatedTitle;
+    public TranslatableString getTranslatableTitle() {
+        return translatableTitle;
     }
 
     /**
      * For subscribers to call to provide a translatable (i18n) title for this object.
      */
-    public void setTranslatedTitle(final TranslatableString translatedTitle) {
-        this.translatedTitle = translatedTitle;
+    public void setTranslatableTitle(final TranslatableString translatableTitle) {
+        this.translatableTitle = translatableTitle;
     }
     //endregion
 

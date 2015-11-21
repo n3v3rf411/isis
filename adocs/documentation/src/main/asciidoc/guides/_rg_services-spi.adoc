@@ -178,6 +178,17 @@ depends on: +
 |
 
 
+|xref:rg.adoc#_rg_services-spi_manpage-UrlEncodingService[`o.a.i.applib.` +
+`services.urlencoding` +
+`UrlEncodingService`]
+|Converts strings into a form safe for use within a URL.  Used to convert view models mementos into usable URL form.
+
+|`UrlEncodingServiceUsingBaseEncoding` +
+``o.a.i.applib`` +
+``isis-core-applib``
+|
+
+
 |xref:rg.adoc#_rg_services-spi_manpage-UserProfileService[`o.a.i.applib.` +
 `services.userprof` +
 `UserProfileService`]
@@ -283,5 +294,6 @@ include::_rg_services-spi_manpage-PublishingService.adoc[leveloffset=+1]
 include::_rg_services-spi_manpage-RepresentationService.adoc[leveloffset=+1]
 include::_rg_services-spi_manpage-TranslationService.adoc[leveloffset=+1]
 include::_rg_services-spi_manpage-TranslationsResolver.adoc[leveloffset=+1]
+include::_rg_services-spi_manpage-UrlEncodingService.adoc[leveloffset=+1]
 include::_rg_services-spi_manpage-UserProfileService.adoc[leveloffset=+1]
 include::_rg_services-spi_manpage-UserRegistrationService.adoc[leveloffset=+1]
